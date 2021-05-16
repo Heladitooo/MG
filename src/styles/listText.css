@@ -1,0 +1,114 @@
+.listText__container {
+    position: fixed;
+    top: 56px;
+    width: 100%;
+    color: white;
+    z-index: 4;
+}
+
+.downPanel {
+    position: fixed;
+    right: 111%;
+    background-color: rgba(0, 0, 0, 0.959);
+    width: 100%;
+    animation: downAnimation .4s forwards;
+    height: 92%;
+    top: 56px;
+    overflow-y:scroll;
+}
+
+.upPanel {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.959);
+    width: 100%;
+    animation: upAnimation .4s forwards;
+    height: 92%;
+    top: 56px;
+    overflow-y:scroll;
+}
+
+@keyframes downAnimation {
+    100% {
+        right: 111%;
+    } 
+    0% {
+        right: 0;
+        left: 0;
+    }
+}
+
+.listText-target {
+    display: grid;
+    grid-template-columns: 85% 9%;
+    grid-gap: 2px;
+    margin: 4% 0 21% 0;
+    font-size: 77%;
+    padding-left: 4%;
+    text-align: start;
+}
+
+.listText-target div img {
+    width: 25%;
+    border-radius: 5px;
+}
+
+.listText-target h1 {
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.target-panel {
+    display: grid;
+    justify-items: center;
+    gap: 4%;
+}
+
+.target-panel__buttonDown , .target-panel__buttonUp {
+    height: 93%;
+    font-size: 208%;
+    outline: none;
+    width: 100%;
+    transition: .4s;
+    margin: 6%;
+}
+
+.target-panel__buttonDown:active , .target-panel__buttonUp:active {
+    height: 100%;
+    user-select:none;
+}
+
+.target-panel__buttonUp{
+    background-color: rgb(115, 230, 62);
+    border-radius: 2px;
+    border: 0px;
+    color: rgb(7, 112, 39);
+}
+
+.target-panel__buttonDown{
+    background-color: rgb(230, 62, 62);
+    color: rgb(131, 35, 35);
+    border-radius: 2px;
+    border: 0px
+}
+
+.target-panel__buttonDelete {
+    color: rgb(230, 62, 62);
+    background-color: rgb(131, 35, 35);
+    border-radius: 2px;
+    border: 0px;
+    width: 100%;
+    justify-self: center;
+    font-size: 206%;
+    position: relative;
+    bottom: 57%;
+}
+
+@keyframes upAnimation {
+    0% {
+        right: 111%;
+    } 
+    100% {
+        right: 0;
+        left: 0;
+    }
+}
