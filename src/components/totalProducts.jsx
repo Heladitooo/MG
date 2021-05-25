@@ -5,7 +5,7 @@ class TotalProducts extends React.Component{
     render(){
         return(
             <div>
-                <h1>Total {numberWithPoints(this.props.count)}</h1>
+                <h1>Total <br/> {numberWithPoints(this.props.count)}</h1>
             </div>
         )
     }

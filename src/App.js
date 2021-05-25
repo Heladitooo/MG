@@ -2,6 +2,7 @@ import React from 'react';
 import ListProducts from "./components/listProducts";
 import Header from "./components/header";
 import ListText from "./components/listText";
+import SendList from "./components/sendList";
 
 const url = "192.168.1.88:3010";
 
@@ -166,11 +167,20 @@ class App extends React.Component {
 
   render() {
     let updateList = this.updateList.bind(this);
+    var bPreguntar = true;
+
+    window.onbeforeunload = preguntarAntesDeSalir;
+
+    function preguntarAntesDeSalir() {
+      if (bPreguntar)
+        return "¿Seguro que quieres salir?";
+    }
     return (
       <div>
         <Header count={this.state.count} updateList={updateList.bind(this)} />
         <ListProducts updateList={updateList.bind(this)} father={this.state} />
         <ListText father={this.state} updateList={updateList.bind(this)} />
+        <SendList father={this.state}/>
       </div>
     );
   }

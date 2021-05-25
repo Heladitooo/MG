@@ -42,11 +42,11 @@ class ListText extends React.Component {
             
             return (
                 <div className="listText__container">
-                    <button className="listText__button" onClick={() => {
+                    <button className="listText-button" onClick={() => {
                         this.setState({
                             changePanel: false
                         })
-                    }}><a href={"/#list"}>mostrar lista</a></button>
+                    }}><a href={"/#list"} className="listText-button__a">mostrar pedido</a></button>
                     <div className={stylePanel}>
                         <button className="listText__button" onClick={() => {
                             this.setState({

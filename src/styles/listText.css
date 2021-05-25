@@ -1,9 +1,11 @@
 .listText__container {
     position: fixed;
-    top: 56px;
+    top: 4.8em;
     width: 100%;
     color: white;
     z-index: 4;
+    left: 7em;
+    
 }
 
 .downPanel {
@@ -101,6 +103,26 @@
     font-size: 206%;
     position: relative;
     bottom: 57%;
+}
+
+.listText-button {
+    background-color: black;
+    border: none;
+    border-top: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.164);
+    border-radius: none;
+    width: 40%;
+    color: white;
+    height: 20%;
+    height: 2.3em;
+}
+
+.listText-button a {
+    color:  white;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
 }
 
 @keyframes upAnimation {
