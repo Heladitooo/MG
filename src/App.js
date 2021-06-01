@@ -48,7 +48,7 @@ class App extends React.Component {
   }
 
   async updateList(name, action) {
-    if (this.state.fetchError != true && this.state.fetched == true) {
+    if (this.state.fetchError !== true && this.state.fetched === true) {
       let count = 0;
       let originalList = JSON.stringify(this.state.originalList);
       let updatingList = this.state.list;
@@ -61,7 +61,6 @@ class App extends React.Component {
               data.productAmount += 1;
               data.productPriceWithAmount = data.productPrice * data.productAmount;
             }
-
           }
         })
 
@@ -133,7 +132,7 @@ class App extends React.Component {
         })
       }
 
-      else if (action == "remove") {
+      else if (action === "remove") {
         updatingList.rows.find((data) => {
           if (data.productName === name) {
             data.productAmount = 0;
@@ -177,10 +176,11 @@ class App extends React.Component {
     }
     return (
       <div>
-        <Header count={this.state.count} updateList={updateList.bind(this)} />
+        <Header count={this.state.count} updateList={updateList.bind(this)}>
+          <ListText father={this.state} updateList={updateList.bind(this)} />
+          <SendList father={this.state} />
+        </Header>
         <ListProducts updateList={updateList.bind(this)} father={this.state} />
-        <ListText father={this.state} updateList={updateList.bind(this)} />
-        <SendList father={this.state}/>
       </div>
     );
   }

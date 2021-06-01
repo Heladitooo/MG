@@ -10,7 +10,7 @@
 .header-panel {
     color: #e4e4e4;
     top: 0;
-    font-size: 60%;
+    font-size: 40%;
     box-shadow: 0px 2px 3px rgb(0 0 0 / 19%);
     display: grid;
     grid-template-columns: 13% 31% 54%;
@@ -26,8 +26,8 @@
 }
 
 .header__img {
-    width: 100%;
-    margin: 2%;
+    width: 88%;
+    margin-top: 6%;
     justify-self: center;
     align-self: center;
 }
@@ -64,9 +64,9 @@
 
 .header__buttonInput {
     position: absolute;
-    top: 1em;
+    top: 0.8em;
     right: 1vh;
-    height: 63%;
+    height: 35%;
     color: rgb(170, 169, 169);
     border: none;
     background-color: rgb(66 66 66);
@@ -76,4 +76,9 @@
 .header__input:hover {
     background-color: white;
     color: black;
+}
+
+.header-options {
+    display: flex;
+    grid-template-columns: 50% 50%;
 }

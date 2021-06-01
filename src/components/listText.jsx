@@ -46,7 +46,7 @@ class ListText extends React.Component {
                         this.setState({
                             changePanel: false
                         })
-                    }}><a href={"/#list"} className="listText-button__a">mostrar pedido</a></button>
+                    }}><a href={"/#list"} className="listText-button__a"> 🛒 mostrar pedido</a></button>
                     <div className={stylePanel}>
                         <button className="listText__button" onClick={() => {
                             this.setState({

@@ -34,7 +34,9 @@ class Header extends React.Component {
                                 }}>x</button>
                             }
                         </div>
-
+                    </div>
+                    <div className="header-options">
+                        {this.props.children}
                     </div>
                 </div>
             </div>

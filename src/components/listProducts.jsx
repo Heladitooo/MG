@@ -78,7 +78,7 @@ class ListProducts extends React.Component {
                         className="listProducts__container"
                         height={1000}
                         itemCount={this.props.father.list.rows.length}
-                        itemSize={230}
+                        itemSize={200}
                         width={300}
                     >
                         {Row}
@@ -86,7 +86,7 @@ class ListProducts extends React.Component {
                 )
             } else {
                 return (
-                    <h1>no se encontraron productos con ese nombre :(</h1>
+                    <h1 className="listProducts__404">no se encontraron productos con ese nombre :(</h1>
                 )
             }
 
