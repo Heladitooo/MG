@@ -5,6 +5,21 @@
     justify-content: center;
 }
 
+.alert-container {
+    position: fixed;
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.959);
+    width: 100%;
+    right: 0;
+    left: 0;
+    height: 100%;
+    top: 0;
+    overflow-y: scroll;
+    color: white;
+    align-items: center;
+    justify-items: center;
+}
+
 .SdownPanel {
     position: fixed;
     right: 111%;

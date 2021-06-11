@@ -8,11 +8,10 @@
     "@testing-library/user-event": "^12.8.3",
     "node-xlsx": "^0.16.1",
     "react": "^17.0.2",
+    "react-custom-popup": "^1.0.29",
     "react-dom": "^17.0.2",
-    "react-number-format": "^4.5.5",
     "react-scripts": "4.0.3",
     "react-window": "^1.8.6",
-    "read-excel-file": "^5.1.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
