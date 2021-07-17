@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from "react";
+import React from "react";
 import TotalProducts from "./totalProducts";
 import "../styles/header.css";
 import Logo from "../img/miniLogo.png";

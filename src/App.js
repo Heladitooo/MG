@@ -1,12 +1,16 @@
 import React from 'react';
-import ListProducts from "./components/listProducts";
+import ProductsList from "./components/productsList/productsList";
 import Header from "./components/header";
-import ListText from "./components/listText";
-import SendList from "./components/sendList";
+import UserList from "./components/userList/userList";
+import SendUserList from "./components/sendUserList";
+
+import { connect } from "react-redux";
+import { getAPI } from './redux/actions';
 
 const url = "192.168.1.88:3010";
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +23,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    this.props.getAPI();
     fetch(this.state.url)
       .then(res => res.text())
       .then(
@@ -169,13 +174,15 @@ class App extends React.Component {
     return (
       <div>
         <Header count={this.state.count} updateList={updateList.bind(this)}>
-          <ListText father={this.state} updateList={updateList.bind(this)} />
-          <SendList father={this.state} count={this.state.count} />
+          <UserList father={this.state} updateList={updateList.bind(this)} />
+          <SendUserList father={this.state} count={this.state.count} count={this.state.count} />
         </Header>
-        <ListProducts updateList={updateList.bind(this)} father={this.state} />
+        <ProductsList />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null,{
+  getAPI
+})(App);
