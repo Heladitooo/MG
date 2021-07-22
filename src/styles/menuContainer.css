@@ -1,0 +1,20 @@
+.menuContainer {
+    width: 100%;
+    color: white;
+    display: grid;
+    justify-content: center;
+    position: fixed;
+    height: 93vh;
+    z-index: 4;
+    grid-template-rows: 2% 1fr;
+    grid-gap: 1em;
+    top: 4.8em;
+    text-align: center;
+}
+
+.menuContainer__exitButton {
+    font-size: 1.5em;
+    align-self: center;
+    margin-top: 0.6em;
+    color: rgba(255, 255, 255, 0.26);
+}

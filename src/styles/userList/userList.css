@@ -1,0 +1,51 @@
+.userList__container {
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.userListEntry , .userListExit {
+    background-color: black;
+}
+
+.userListEntry {
+    animation-name: userListEntry;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes userListEntry {
+    0% {
+        opacity: 0;
+        left: -1000px;
+    }
+
+    100% {
+        opacity: 100%;
+        left: 0;
+    }
+}
+
+.userListExit {
+    animation-name: userListExit;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes userListExit {
+    0% {
+        left: 0;
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        left: -1000px;
+    }
+}
+
+.userList {
+    overflow-y: scroll;
+}
+

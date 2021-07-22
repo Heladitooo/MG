@@ -1,0 +1,61 @@
+.productCardInUserList {
+    display: grid;
+    grid-template-columns: 85% 9%;
+    grid-gap: 2px;
+    margin: 4% 0 9% 0;
+    font-size: 61%;
+    padding-left: 4%;
+    text-align: start;
+}
+
+.productCardInUserList div img {
+    width: 25%;
+    border-radius: 5px;
+}
+
+.productCardInUserList h1 {
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.productCardInUserList-panel {
+    display: grid;
+    justify-items: center;
+    gap: 4%;
+}
+
+.productCardInUserList-panel__buttonDown,
+.productCardInUserList-panel__buttonUp {
+    height: 93%;
+    font-size: 208%;
+    outline: none;
+    width: 100%;
+    transition: .4s;
+    margin: 6%;
+}
+
+.productCardInUserList-panel__buttonUp {
+    background-color: rgb(115, 230, 62);
+    border-radius: 2px;
+    border: 0px;
+    color: rgb(7, 112, 39);
+}
+
+.productCardInUserList-panel__buttonDown {
+    background-color: rgb(230, 62, 62);
+    color: rgb(131, 35, 35);
+    border-radius: 2px;
+    border: 0px
+}
+
+.productCardInUserList-panel__buttonDelete {
+    color: rgb(230, 62, 62);
+    background-color: rgb(131, 35, 35);
+    border-radius: 2px;
+    border: 0px;
+    width: 100%;
+    justify-self: center;
+    font-size: 206%;
+    position: relative;
+    bottom: 57%;
+}

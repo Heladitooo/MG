@@ -1,0 +1,43 @@
+.userProductsCounterEntry {
+    animation-name: userProductsCounterEntry;
+    animation-duration: .4s;
+    animation-fill-mode: forwards
+}
+
+.userProductsCounterReEntry {
+    animation-name: userProductsCounterReEntry;
+    animation-duration: .4s;
+    animation-fill-mode: forwards
+}
+
+@keyframes userProductsCounterEntry {
+    0% {
+        color: white;
+    }
+
+    50% {
+        opacity: 10;
+        color: #ffdc17
+    }
+
+    100% {
+        opacity: 100;
+        color: white;
+    }
+}
+
+@keyframes userProductsCounterReEntry {
+    0% {
+        color: white;
+    }
+
+    50% {
+        opacity: 10;
+        color: #ffdc17
+    }
+
+    100% {
+        opacity: 100;
+        color: white;
+    }
+}

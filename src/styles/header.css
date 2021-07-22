@@ -1,7 +1,7 @@
 .header-container {
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 8;
     background: #000000;
     display: grid;
     top: 0;
@@ -18,9 +18,11 @@
     padding-left: 2%;
     width: 100%;
 }
+
 .header-panel h1 {
     margin-left: 6%;
 }
+
 .header {
     display: grid;
 }
@@ -78,7 +80,34 @@
     color: black;
 }
 
-.header-options {
-    display: flex;
+.header-buttons {
+    display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.header-buttons__button {
+    background-color: black;
+    border: none;
+    border-top: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.164);
+    border-radius: none;
+    width: 100%;
+    color: white;
+    height: 20%;
+    height: 2.3em;
+    overflow: none;
+}
+
+.header-buttons__button:active a {
+    color: #ffdc17;
+}
+
+.header-buttons__button a {
+    transition: .4s;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
+    width: 100%;
 }
