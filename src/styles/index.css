@@ -1,6 +1,20 @@
+html {
+    touch-action: manipulation;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto' , sans-serif; 
     background-color: #e0e0e0;
     overflow-x: hidden;
+}
+
+.active-button {
+    opacity: 100%;
+}
+
+.disabled-button {
+    opacity: 20%;
+    animation-name: disableButton;
+    animation-duration: .4s;
 }

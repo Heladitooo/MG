@@ -4,12 +4,12 @@
     display: grid;
     justify-content: center;
     position: fixed;
-    height: 93vh;
+    height: 88vh;
     z-index: 4;
-    grid-template-rows: 2% 1fr;
     grid-gap: 1em;
-    top: 4.8em;
+    top: 9vh;
     text-align: center;
+    padding-top: 2em;
 }
 
 .menuContainer__exitButton {

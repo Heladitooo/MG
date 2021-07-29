@@ -8,24 +8,23 @@ import { connect } from "react-redux";
 
 import ProductCard from "./productCardInProductList";
 
-let oldFilterProductList = [];
 
 class ProductsList extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             productListAnimationClass: "productList"
         }
     }
 
-    componentWillReceiveProps(newProps){
-        if(newProps.filterProductList === this.props.filterProductList){
+    componentWillReceiveProps(newProps) {
+        if (newProps.filterProductList === this.props.filterProductList) {
             this.setState({
                 productListAnimationClass: "productList"
             })
         } else {
-            if(this.state.productListAnimationClass === "productListEntry"){
+            if (this.state.productListAnimationClass === "productListEntry") {
                 this.setState({
                     productListAnimationClass: "productListReEntry"
                 })
@@ -34,7 +33,7 @@ class ProductsList extends React.Component {
                     productListAnimationClass: "productListEntry"
                 })
             }
-            
+
         }
     }
 
@@ -52,7 +51,7 @@ class ProductsList extends React.Component {
 
             return (
                 <div className="productList__wait">
-                    <h1>A ocurrido un problema de nuestra parte, llama a: 92012902</h1>
+                    <h1>A ocurrido un problema de nuestra parte, recarga la página, si el error sigue llama a: 92012902</h1>
                 </div>
             )
         } else {
@@ -60,10 +59,10 @@ class ProductsList extends React.Component {
             if (this.props.filterProductList.length > 0) {
 
                 const Row = ({ index, style }) => (
-                    <div key={this.props.filterProductList[index].productName} className={index % 2 ? "ListItemOdd" : "ListItemEven"} style={style}>
+                    <div key={this.props.filterProductList[index].productName} className="productCardInProductList__container" style={style}>
                         <ProductCard product={this.props.filterProductList[index]} />
                     </div>
-    
+
                 );
 
                 return (

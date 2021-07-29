@@ -22,6 +22,7 @@ class Header extends React.Component {
                         <UserProductsCounter />
                         <div className="header-inputContainer">
                             <input className="header__input" type="text" value={this.state.inputText} placeholder="buscar..." onChange={(e) => {
+        
                                 this.setState({
                                     inputText: e.target.value
                                 })
@@ -52,15 +53,19 @@ class Header extends React.Component {
                     <div className="header-buttons">
                         <button className="header-buttons__button" onClick={() => {
                             if(this.props.renderMenuD === "userList"){
-                                this.props.renderMenu("productsList");
+                                this.props.renderMenu("productList");
                             } else {
                                 this.props.renderMenu("userList");
                             }
-                        }}><a className="header-buttons__a"> <span class="icon-cart"></span> mostrar pedido</a></button>
+                        }}><a href="#user-list" className="header-buttons__a"> <span className="icon-cart"></span> mostrar pedido</a></button>
 
-                        <button className="sendList-button" onClick={() => {
-                            
-                        }}><a className="-button__a">enviar pedido <span class="icon-checkbox-checked"></span></a></button>
+                        <button className="header-buttons__button" onClick={() => {
+                            if(this.props.renderMenuD === "userDataForm"){
+                                this.props.renderMenu("productList");
+                            } else {
+                                this.props.renderMenu("userDataForm");
+                            }
+                        }}><a href="#user-data-form" className="header-buttons__a">enviar pedido <span className="icon-checkbox-checked"></span></a></button>
                     </div>
                 </div>
             </div>
@@ -70,7 +75,7 @@ class Header extends React.Component {
 
 const mapStateToProps = (data) => {
     return {
-        renderMenuD: data.renderMenu
+        renderMenuD: data.renderMenu,
     }
    
 }

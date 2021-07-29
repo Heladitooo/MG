@@ -1,21 +1,25 @@
 import React from "react";
 import "../../styles/userList/userList.css";
 
+//Manejo de animaciones de entrada y salida
+import { CSSTransition } from 'react-transition-group';
+
 import { connect } from "react-redux";
 import ProductCardInUserList from "./productCardInUserList";
 
 import MenuContainer from "../menuContainer";
 
 class UserList extends React.Component {
-    
+
     render() {
-
-        //Clase que vamos a usar para las animaciones de entrada y salida
-        let userListContainerStyle = this.props.renderMenu === "userList" ? "userListEntry" : "userListExit";
-
-        if (this.props.renderMenu !== "none") {
-            return (
-                <MenuContainer animationClass={userListContainerStyle} >
+        return (
+            <CSSTransition
+                in={this.props.renderMenu === "userList"}
+                timeout={500}
+                classNames="userList"
+                unmountOnExit
+                appear>
+                <MenuContainer >
                     <div className="userList">
                         {
                             this.props.userList.map((data) => {
@@ -24,12 +28,9 @@ class UserList extends React.Component {
                         }
                     </div>
                 </MenuContainer>
-            )
-        } else {
-            return null;
-        }
+            </CSSTransition>
 
-
+        )
     }
 }
 

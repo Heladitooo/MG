@@ -1,48 +1,15 @@
-.userList__container {
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.userListEntry , .userListExit {
+.userList-enter , .userList-exit  , .userList-exit-done{
+    opacity: 0;
+    left: -1000px;
     background-color: black;
+    transition: 1s;
 }
 
-.userListEntry {
-    animation-name: userListEntry;
-    animation-duration: .8s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes userListEntry {
-    0% {
-        opacity: 0;
-        left: -1000px;
-    }
-
-    100% {
-        opacity: 100%;
-        left: 0;
-    }
-}
-
-.userListExit {
-    animation-name: userListExit;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes userListExit {
-    0% {
-        left: 0;
-        opacity: 100%;
-    }
-
-    100% {
-        opacity: 0;
-        left: -1000px;
-    }
+.userList-enter-done , .userList-enter-active {
+    opacity: 100%;
+    left: 0;
+    background-color: black;
+    transition: .7s;
 }
 
 .userList {

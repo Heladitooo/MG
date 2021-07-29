@@ -1,9 +1,16 @@
+ .productCardInProductList__container {
+     height: auto !important;
+     display: grid;
+     padding-top: 1em;
+ }
+ 
+ 
  .productCardInProductList-card {
      word-break: break-word;
      background-color: #ebebeb;
      width: 91% !important;
      display: grid;
-     grid-template-columns: 10% 60% 28%;
+     grid-template-columns: 10% 58% 29%;
      grid-gap: 1%;
      gap: 1%;
      font-size: 100%;
@@ -12,7 +19,6 @@
      transition: .6s;
      align-items: center;
      border-radius: 0px;
-     height: 77% !important;
      justify-self: center;
  }
  
@@ -38,10 +44,10 @@
  }
  
  .card-panel__buttonUp {
-     background-color: rgb(115, 230, 62);
+     background-color: #73e63e;
      border-radius: 2px;
      border: 0px;
-     color: rgb(7, 112, 39);
+     color: #077027;
  }
  
  .card-panel__buttonDown {

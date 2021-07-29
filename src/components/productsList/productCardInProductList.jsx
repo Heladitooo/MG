@@ -4,7 +4,9 @@ import React from "react";
 
 import "../../styles/productList/productCardInProductList.css";
 import numberWithPoints from "../../numberWithPoints";
-import Logo from "../../img/logo.png";
+
+import MiniLogoBG from "../../img/miniLogoBG.png";
+
 
 import { connect } from "react-redux";
 import { addProduct, subtractProduct } from "../../redux/actions";
@@ -16,27 +18,51 @@ class ProductCardInProductList extends React.Component {
 
         this.state = {
             maxProductAmount: 10,
-            product: this.props.product
+            product: this.props.product,
+            buttonUpClass: "active-button",
+            buttonDownClass: "desabled-button",
         }
     }
 
+    handleAddProduct(e) {
+
+        //Sumar producto actualizado la lista
+        this.props.addProduct(this.state);
+    }
+
+    handleSubstractProduct(e) {
+
+        //Restar producto actualizando la lista
+        this.props.subtractProduct(this.state);
+    }
+
     render() {
+        let buttonUpClass = "active-button";
+        let buttonDownClass = "desabled-button";
+
+        //Manejar opacidad de botones
+        if (this.state.product.productAmount < 1) {
+            buttonDownClass = "disabled-button";
+        } else if(this.state.product.productAmount > 9){
+            buttonUpClass = "disabled-button";
+        } else {
+            buttonDownClass = "active-button";
+            buttonUpClass = "active-button";
+        }
 
         return (
             <div className="productCardInProductList-card">
                 {
                     this.state.product.productAvailable ?
                         <div className="card-panel ">
-                            <button className="card-panel__buttonUp" onClick={(e) => {
-                                //Sumar producto actualizado la lista
-                                this.props.addProduct(this.state);
-                                e.target.style.color= "yellow"
-
-                            }}>+</button>
-                            <button className="card-panel__buttonDown" onClick={() => {
-                                //Restar producto actualizando la lista
-                                this.props.subtractProduct(this.state);
-                            }}>-</button>
+                            <button
+                                className={"card-panel__buttonUp " + buttonUpClass}  
+                                onClick={e => this.handleAddProduct(e)}
+                            >+</button>
+                            <button
+                                className={"card-panel__buttonDown " + buttonDownClass }
+                                onClick={e => this.handleSubstractProduct(e)}
+                            >-</button>
                         </div>
                         :
                         <>
@@ -55,10 +81,10 @@ class ProductCardInProductList extends React.Component {
                         this.state.product.productImage ?
                             <img className="productCardInProductList-card__img" alt="productImage" src={this.state.product.productImage} width="200px" onError={(e) => {
                                 e.target.onerror = null;
-                                e.target.src = Logo;
+                                e.target.src = MiniLogoBG;
                             }} />
                             :
-                            <img className="productCardInProductList-card__img" alt="productImage" src={Logo} width="200px" />
+                            <img className="productCardInProductList-card__img" alt="productImage" src={MiniLogoBG} width="200px" />
                     }
 
                     <h1 className="productCardInProductList-card__name">{this.state.product.productName}</h1>

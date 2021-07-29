@@ -8,10 +8,7 @@ import "../styles/menuContainer.css"
 class MenuContainer extends React.Component {
     render() {
         return (
-            <div className={"menuContainer " + this.props.animationClass}>
-                <span class="icon-cancel-circle menuContainer__exitButton" onClick={() => {
-                    this.props.renderMenu("productList");
-                }}></span>
+            <div className="menuContainer">
                 {this.props.children}
             </div>
         )

@@ -2,7 +2,7 @@ import React from 'react';
 import ProductsList from "./components/productsList/productsList";
 import Header from "./components/header/header";
 import UserList from "./components/userList/userList";
-import SendUserList from "./components/sendUserList";
+import UserDataForm from './components/UserDataForm';
 
 import { connect } from "react-redux";
 import { getAPI } from './redux/actions';
@@ -12,7 +12,7 @@ class App extends React.Component {
   componentDidMount() {
 
     //Hacemos una llamada a la API
-    fetch("http://192.168.1.88:3010/info")
+    fetch("http://191.91.209.27:3010/info")
       .then(
         (res) => {
           return res.json();
@@ -35,10 +35,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header>
-          {/* <SendUserList father={this.state} count={this.state.count} count={this.state.count} /> */}
-        </Header>
+        <Header/>
         <UserList />
+        <UserDataForm />
         <ProductsList />
       </div>
     );
